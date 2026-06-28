@@ -1,0 +1,36 @@
+{
+  "name": "pi-provider-logger",
+  "version": "0.1.0",
+  "description": "A Pi extension that logs every provider request and response to a file, and shows a short notification in the UI.",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "biome check --write --error-on-warnings src",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "author": "Jakub Synowiec",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@earendil-works/pi-ai": "^0.79.9",
+    "@earendil-works/pi-coding-agent": "^0.79.9",
+    "@earendil-works/pi-tui": "^0.79.9",
+    "typescript": "^5.9.3"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsynowiec/pi-provider-logger.git"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
