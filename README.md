@@ -9,21 +9,21 @@ A [pi](https://github.com/earendil-works/pi) extension that logs every provider 
 
 ## Log location
 
-```
+```sh
 ~/.pi/logs/provider-requests.log
 ```
 
 The directory is created on first write. Each entry is delimited by `===` banners, e.g.:
 
-```
+```text
 === PROVIDER REQUEST ===
 Time: 2025-01-01T00:00:00.000Z
 Model api: openai-completions
-Model baseUrl: https://api.example.com/v1
+Model baseUrl: https://api.openai.com/v1/
 
 Payload (provider-specific request parameters):
 {
-  "model": "gpt-4o",
+  "model": "gpt-5.4-mini",
   "messages": [...]
 }
 ========================
@@ -31,7 +31,25 @@ Payload (provider-specific request parameters):
 
 ## Install
 
-This package is loaded by pi as a local extension via the `pi.extensions` field in `package.json`; no extra install step is required when running from a checkout. To consume it as a dependency from another project, add it to that project's `pi.extensions` list.
+### From npm (recommended):
+
+#### Instal globally
+
+```sh
+pi install npm:@jsynowiec/pi-provider-logger
+```
+
+#### Project-local install:
+
+```sh
+pi install -l npm:@jsynowiec/pi-provider-logger
+```
+
+### Using git:
+
+```sh
+pi install git:github.com/jsynowiec/pi-provider-logger
+```
 
 ## Development
 
